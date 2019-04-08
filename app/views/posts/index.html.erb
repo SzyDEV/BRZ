@@ -1,6 +1,16 @@
-<h2>Wszystkie Przedmioty</h2>
-<ul>
+<h1>Tytuł strony</h1>
+<h2>Z ostatniego tygodnia</h2>
 <%@posts.each do |post|%>
-<li><%=post.title%></li>
+    <%if post.is_confirmed == 0 %>
+    <div>
+        <%=post.title%>
+    </div>
+    <%end%>
+<%end%>
+
+<ul>
+<%@tags.each do |tag|%>
+    <li><%=tag.name%></li>
 <%end%>
 </ul>
+<%=link_to "Dodaj nowy przedmiot", new_post_path%>

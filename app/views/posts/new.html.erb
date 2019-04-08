@@ -1,4 +1,33 @@
 <h2>Dodawanie nowego przedmiotu</h2>
+<ul>
 <%=form_for(@post) do |f|%>
-    
+    <% @post.errors.full_messages.each do |error|%>
+    <li><%=error%></li>
+    <%end%>
+</ul>
+<p><%=f.label :title, "Tytuł"%></p>
+<%= f.text_field :title%>
+
+<p><%=f.label :description, "Opis"%></p>
+<%= f.text_area :description%>
+
+<p><%=f.label :made_by, "Dodane przez"%></p>
+<%=f.text_field :made_by%>
+
+<p><%=f.label :classroom, "Gdzie"%></p>
+<%=f.text_field :classroom%>
+
+<p><%=f.label :tag_id, "Kategoria"%></p>
+<%=f.select(:tag_id, options_for_select([
+    ['Elektronika'      ,1],
+    ['Książki'          ,2],
+    ['Zeszyty'          ,3],
+    ['Przybory szkolne' ,4],
+    ['Odzież'           ,5]
+]))%>
+
+<p><%=f.label :category, "Zdarzenie"%></p>
+<%=f.select(:category, options_for_select([['Znaleziono',1],['Szukam',2]]))%>
+
+<%=f.submit%>
 <%end%>

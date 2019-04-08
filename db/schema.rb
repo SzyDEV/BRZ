@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_154019) do
+ActiveRecord::Schema.define(version: 2019_04_07_185247) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_04_07_154019) do
     t.integer "tag_id"
     t.string "classroom"
     t.string "made_by"
-    t.string "category"
-    t.boolean "is_confirmed"
+    t.integer "category"
+    t.integer "is_confirmed"
     t.index ["tag_id"], name: "index_posts_on_tag_id"
   end
 
