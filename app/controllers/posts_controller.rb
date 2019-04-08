@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     include PostsHelper
 
     def index
+        @current_week = Post.where("created_at >= ?", Date.today.at_beginning_of_week)
         @posts = Post.all
         @tags = Tag.all
     end 
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         @post.is_confirmed = 0
         if @post.save
-            redirect_to posts_path
+            redirect_to root_path
         else
             render 'new'
         end

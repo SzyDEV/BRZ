@@ -5,4 +5,7 @@
 <p>Sala: <%=@post.classroom%></p>
 <p>Autor: <%=@post.made_by%></p>
 <p>Data dodania: <%=@post.created_at%></p>
+<%=link_to 'Usuń',post_path(@post), 
+    method: :delete,
+    data: {Confirm: 'Napewno?'}%>
 
