@@ -1,6 +1,6 @@
 <h2>Dodawanie nowego przedmiotu</h2>
-<ul>
 <%=form_for(@post) do |f|%>
+<ul>
     <% @post.errors.full_messages.each do |error|%>
     <li><%=error%></li>
     <%end%>
@@ -11,7 +11,7 @@
 <p><%=f.label :description, "Opis"%></p>
 <%= f.text_area :description%>
 
-<p><%=f.label :made_by, "Dodane przez"%></p>
+<p><%=f.label :made_by, "Autor"%></p>
 <%=f.text_field :made_by%>
 
 <p><%=f.label :classroom, "Gdzie"%></p>

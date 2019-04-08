@@ -30,4 +30,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      post:
+        title: "Tytuł"
+        made_by: "Autor"
+        classroom: "'Gdzie?'"
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "nie może być pusty"
+            made_by:
+              blank: "nie może być pusty"
+            classroom:
+              blank: "nie może być pusty"
