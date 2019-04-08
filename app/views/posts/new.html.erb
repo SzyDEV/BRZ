@@ -1,5 +1,5 @@
 <h2>Dodawanie nowego przedmiotu</h2>
-<%=form_for(@post) do |f|%>
+<%=form_for(@post, html: {multipart: true}) do |f|%>
 <ul>
     <% @post.errors.full_messages.each do |error|%>
     <li><%=error%></li>
@@ -7,6 +7,9 @@
 </ul>
 <p><%=f.label :title, "Tytuł"%></p>
 <%= f.text_field :title%>
+
+<p><%=f.label :image, "Dodaj obrazek (opcjonalne)"%></p>
+<%=f.file_field :image%>
 
 <p><%=f.label :description, "Opis"%></p>
 <%= f.text_area :description%>

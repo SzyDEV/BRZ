@@ -1,5 +1,7 @@
 <h2><%=@post.title%></h2>
-<h3>Tu Będzie Obrazek</h3>
+<p><%if @post.image.exists?%>
+    <%= image_tag @post.image.url%>
+<%end%></p>
 <h3>Opis</h3>
 <p><%=@post.description%></p>
 <p>Sala: <%=@post.classroom%></p>

@@ -6,6 +6,7 @@ module PostsHelper
             :made_by,
             :classroom,
             :category,
-            :tag_id)
+            :tag_id,
+            :image)
     end
 end

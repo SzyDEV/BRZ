@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_185247) do
+ActiveRecord::Schema.define(version: 2019_04_08_171515) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2019_04_07_185247) do
     t.string "made_by"
     t.integer "category"
     t.integer "is_confirmed"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["tag_id"], name: "index_posts_on_tag_id"
   end
 

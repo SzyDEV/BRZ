@@ -3,7 +3,9 @@
         <%=link_to post_path(post) do%>
             <div>
                 <h3><%=post.title%></h3>
-                tu bedzie fotka
+                <p><%if post.image.exists?%>
+                <%= image_tag post.image.url%>
+                <%end%></p>
             </div>
         <%end%>
     <%end%>
