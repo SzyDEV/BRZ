@@ -1,5 +1,19 @@
 <h2>Z ostatniego tygodnia</h2>
 <%= render 'currentweek'%>
 
+<%= form_tag root_path, :method => 'get' do%>
+    <%=select_tag(:search, options_for_select([
+    ['Elektronika'      ,1],
+    ['Książki'          ,2],
+    ['Zeszyty'          ,3],
+    ['Przybory szkolne' ,4],
+    ['Odzież'           ,5]
+]),:include_blank => true)%>
+    <%=submit_tag "Search", :name => nil%>
+<%end%>
+<%@posts.each do |post|%>
+    <%=post.title%>
+<%end%>
+
 <%=link_to "Dodaj nowy przedmiot", new_post_path%>
 

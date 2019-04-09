@@ -9,4 +9,14 @@ class Post < ApplicationRecord
     def self.recent_posts
         Post.where("created_at >= ?", 1.week.ago.utc).order("created_at DESC")
     end
+
+    def self.search(search)
+        if search == ""
+            where(nil)
+        elsif search
+            where('tag_id LIKE ?',"#{search}")
+        else
+            where(nil)
+        end
+    end
 end

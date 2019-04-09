@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
     def index
         @current_week = Post.where("created_at >= ?", Date.today.at_beginning_of_week)
-        @posts = Post.all
+        @posts = Post.search(params[:search])
         @tags = Tag.all
     end 
 
