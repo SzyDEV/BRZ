@@ -13,4 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
 //= require_tree .
+
+
+$(function () {
+    $("#category_select").submit(function () {
+        $.get(this.action, $(this).serialize(), null, "script");
+        return false;
+    })
+})

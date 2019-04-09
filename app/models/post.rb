@@ -10,11 +10,16 @@ class Post < ApplicationRecord
         Post.where("created_at >= ?", 1.week.ago.utc).order("created_at DESC")
     end
 
-    def self.search(search)
-        if search == ""
+    def self.search(tag,category)
+        if(tag=="" && category =="")
             where(nil)
-        elsif search
-            where('tag_id LIKE ?',"#{search}")
+        elsif(tag && category=="") 
+            where('tag_id LIKE ?',"#{tag}")
+        elsif(category && tag=="")
+            where('category LIKE ?',"#{category}")
+        elsif tag && category
+            where('tag_id LIKE ?',"#{tag}").
+            where('category LIKE ?',"#{category}")
         else
             where(nil)
         end
