@@ -32,8 +32,4 @@ class PostsController < ApplicationController
 
         redirect_to posts_path
     end
-
-    def category_is_elektronika
-
-    end
 end

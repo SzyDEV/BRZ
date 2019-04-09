@@ -1,11 +1,5 @@
 <h2>Z ostatniego tygodnia</h2>
 <%= render 'currentweek'%>
 
-<ul>
-<%@tags.each do |tag|%>
-    <li>
-        <%=tag.name%>
-    </li>
-<%end%>
-</ul>
 <%=link_to "Dodaj nowy przedmiot", new_post_path%>
+
