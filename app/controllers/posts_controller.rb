@@ -32,4 +32,12 @@ class PostsController < ApplicationController
 
         redirect_to root_path
     end
+
+    def confirm
+        post = Post.find(params[:id])
+        post.is_confirmed = 1
+        post.save
+
+        redirect_to root_path
+    end
 end

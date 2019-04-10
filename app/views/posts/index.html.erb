@@ -1,6 +1,6 @@
 <h2>Z ostatniego tygodnia</h2>
 <%= render 'currentweek'%>
-
+<h2>Wszystkie</h2>
 <%= form_tag root_path, :method => 'get', :id => "category_select" do%>
     <%=select_tag(:tag, options_for_select([
     ['Elektronika'      ,1],
@@ -15,7 +15,11 @@
     <%=submit_tag "Search", :name => nil%>
 <%end%>
 <div id="filtered_posts">
+<%if logged_in?%>
+    <%= render :partial => "adminfilter"%>
+<%else%>
     <%= render :partial => "filter"%>
+<%end%>
 </div>
 <%=link_to "Dodaj nowy przedmiot", new_post_path%>
 
