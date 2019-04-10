@@ -4,15 +4,16 @@ class AdminSessionsController < ApplicationController
     end
 
     def create
-        if login(params[:username], params[:password])
-            redirect_back_or_to(root_path, notice: "Zalogowany jako administrator.")
+        if login(params[:email], params[:password])
+          redirect_back_or_to(root_path)
         else
-            render action: :new
+          render action: :new
         end
     end
+    
 
     def destroy
         logout
-        redirect_to(:root, notice: "Logged out!")
+        redirect_to(:root)
     end
 end

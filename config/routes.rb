@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'posts#index'
-
+  resources :admins
   resources :admin_sessions, only: [:new, :create, :destroy]
   get 'login' => 'admin_sessions#new'
   get 'logout' => 'admin_sessions#destroy'
