@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_171515) do
+ActiveRecord::Schema.define(version: 2019_04_10_093743) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username", null: false
+    t.string "crypted_password", null: false
+    t.string "salt", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.index ["username"], name: "index_admins_on_username", unique: true
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"

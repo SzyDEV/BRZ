@@ -12,5 +12,12 @@
   <body>
     <h1>Biuro rzeczy znalezionych</h1>
     <%= yield %>
+    <br>
+    <%if logged_in?%>
+      <%="logged in"%>
+      <%=link_to "Wyloguj się", logout_path%>
+    <%else%>
+      <%=link_to "Zaloguj się", login_path%>
+    <%end%>
   </body>
 </html>
