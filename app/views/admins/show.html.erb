@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Username:</strong>
+  <strong>Nazwa użytkownika</strong>
   <%= @admin.username %>
 </p>
 
@@ -11,14 +9,9 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
+  <strong>Hasłó</strong>
   <%= @admin.password %>
 </p>
 
-<p>
-  <strong>Password confirmation:</strong>
-  <%= @admin.password_confirmation %>
-</p>
-
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admins_path %>
+<%= link_to 'Edytuj', edit_admin_path(@admin) %> |
+<%= link_to 'Wróć', admins_path %>

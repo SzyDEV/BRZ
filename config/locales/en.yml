@@ -36,6 +36,10 @@ en:
         title: "Tytuł"
         made_by: "Autor"
         classroom: "'Gdzie?'"
+      admin:
+        username: "Nazwa użytkownika"
+        password: "Hasło"
+        password_confirmation: "Potwierdzenia hasła"
     errors:
       models:
         post:
@@ -46,3 +50,14 @@ en:
               blank: "nie może być pusty"
             classroom:
               blank: "nie może być pusty"
+        admin:
+          attributes:
+            username:
+              blank: "nie może być pusta"
+            email:
+              blank: "nie może być pusty"
+            password:
+              blank: "nie może być puste"
+            password_confirmation:
+              blank: "nie może być puste"
+

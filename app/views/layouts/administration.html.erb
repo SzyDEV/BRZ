@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biuro Rzeczy Znalezionych | Admin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+    <h1>Panel Administratora</h1>
+    <%if logged_in?%>
+        <%=yield%>
+        <br>
+        <%if logged_in?%>
+            <%="Zalogowany jako #{current_user.username}"%>
+            <%=link_to "Wyloguj się", logout_path%>
+        <%else%>
+            <%=link_to "Zaloguj się", login_path%>
+        <%end%>
+    <%else%>
+        <%=link_to "Wróć", root_path%>
+    <%end%>
+</body>
+</html>
