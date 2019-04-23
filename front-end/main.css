@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus{
+    outline: 0;
+    user-select: none;
+}
+
+html {
+    font: 25px 'Righteous', cursive;
+}
+
+:root{
+    --background-color: #f8f8f8;
+    --accent-color: #29166e;
+    --logo-size: 1.7rem;
+    --logo-border: 2px solid var(--accent-color);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+}
+
+section#page-head{
+    position:fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    border-bottom: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    border-radius: 0% 0% 5px 5px;
+}
+
+section#page-head header select {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: inherit;
+}
+
+section#page-head header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: var(--background-color);
+    padding: 10px 15px;
+    line-height: var(--logo-size);
+}
+
+section#page-head nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: -68px;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: .2s linear;
+}
+
+section#page-head nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+section#page-head nav ul li:nth-child(1) i {
+    color: #e74c3c;
+}
+
+section#page-head nav ul li:nth-child(2) i {
+    color: #9b59b6;
+}
+
+section#page-head nav ul li:nth-child(3) i {
+    color: #3498db;
+}
+
+section#page-head nav ul li:nth-child(4) i {
+    color: #e67e22;
+}
+
+section#page-head nav ul li:nth-child(5) i {
+    color: #34495e;
+}
+
+section#page-head nav ul li i {
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1), -1px -1px 1px rgba(0,0,0,0.1)
+}
+
+section#page-head.active nav ul {
+    margin-top: 0px
+}
+
+section#page-head div#cat-dropdown {
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+div.zsk_logo{
+    background: url(img/zsk_logo.jpg) no-repeat center center;
+    background-size: cover;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    border-radius: 50%;
+    border: var(--logo-border);
+}
+
+div#add-ad {
+    cursor: pointer;
+    font-size: .55rem;
+    line-height: .6rem;
+    text-align: center;
+    padding-top: 10px;
+}
+
+div#add-ad i {
+    margin-right: 5px;
+}
+
+section#page-items {
+    margin-top: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section#page-items .item {
+    /* width: 100%; */
+    padding: 15px 20px;
+}
+
+section#page-items .item .image {
+    width: 320px;
+    height: 180px;
+    background: url(img/pobrane.jpg) no-repeat center center;
+    background-size: cover;
+}
+section#page-items .item .title {
+    font-size: .9rem;
+}
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #212529;
+    margin-top: 20px;
+    padding: 20px 15px;
+    color: #737B82;
+    font-size: .5rem;
+}
+
+footer span:first-child {
+    margin-bottom: 15px;
+}
