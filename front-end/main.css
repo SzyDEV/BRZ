@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Righteous|Lato');
 
 * {
     margin: 0;
@@ -17,10 +17,19 @@ html {
 }
 
 :root{
-    --background-color: #f8f8f8;
+    --background-color: #eeecec;
     --accent-color: #29166e;
     --logo-size: 1.7rem;
     --logo-border: 2px solid var(--accent-color);
+    --header-color: #fff;
+    --gray-text: #3e4e81;
+    --footer-background-color: #212529;
+    --footer-text: #737B82;
+    --category-color-1: #e74c3c;
+    --category-color-2: #9b59b6;
+    --category-color-3: #3498db;
+    --category-color-4: #e67e22;
+    --category-color-5: #34495e;
 }
 
 body {
@@ -34,8 +43,7 @@ section#page-head{
     left:0;
     width: 100%;
     border-bottom: 2px solid var(--accent-color);
-    background-color: var(--background-color);
-    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    background-color: var(--header-color);
     border-radius: 0% 0% 5px 5px;
 }
 
@@ -43,7 +51,7 @@ section#page-head header select {
     border: none;
     cursor: pointer;
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: inherit;
     color: inherit;
 }
@@ -52,9 +60,13 @@ section#page-head header {
     display: flex;
     justify-content: space-between;
     position: relative;
-    background-color: var(--background-color);
+    background-color: var(--header-color);
     padding: 10px 15px;
     line-height: var(--logo-size);
+}
+
+section#page-head #desktop-menu {
+    display: none;
 }
 
 section#page-head nav ul{
@@ -68,7 +80,7 @@ section#page-head nav ul{
     transition: .2s linear;
 }
 
-section#page-head nav ul li {
+section#page-head nav#mobile-menu ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,23 +89,23 @@ section#page-head nav ul li {
 }
 
 section#page-head nav ul li:nth-child(1) i {
-    color: #e74c3c;
+    color: var(--category-color-1);
 }
 
 section#page-head nav ul li:nth-child(2) i {
-    color: #9b59b6;
+    color: var(--category-color-2);
 }
 
 section#page-head nav ul li:nth-child(3) i {
-    color: #3498db;
+    color: var(--category-color-3);
 }
 
 section#page-head nav ul li:nth-child(4) i {
-    color: #e67e22;
+    color: var(--category-color-4);
 }
 
 section#page-head nav ul li:nth-child(5) i {
-    color: #34495e;
+    color: var(--category-color-5);
 }
 
 section#page-head nav ul li i {
@@ -101,7 +113,7 @@ section#page-head nav ul li i {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1), -1px -1px 1px rgba(0,0,0,0.1)
 }
 
-section#page-head.active nav ul {
+section#page-head.active nav#mobile-menu ul {
     margin-top: 0px
 }
 
@@ -129,42 +141,162 @@ div#add-ad {
     padding-top: 10px;
 }
 
+#add-ad-desktop {
+    display: none;
+    cursor: pointer;
+    align-self: center;
+    font-size: .7rem;
+    margin: 0 25px 0 10px;
+    padding-top: 3px;
+}
+
 div#add-ad i {
     margin-right: 5px;
 }
 
 section#page-items {
-    margin-top: 110px;
+    margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font: bold .7rem 'Lato', sans-serif;
 }
 
 section#page-items .item {
-    /* width: 100%; */
-    padding: 15px 20px;
+    flex-basis: 100%;
+    padding: 10px 10px;
+    background-color: var(--header-color);
+    margin: 5px 0;
 }
 
 section#page-items .item .image {
-    width: 320px;
-    height: 180px;
+    width: 100%;
+    height: 200px;
     background: url(img/pobrane.jpg) no-repeat center center;
     background-size: cover;
 }
-section#page-items .item .title {
-    font-size: .9rem;
+
+section#page-items .item .added-date,section#page-items .item .added-time {
+    color: var(--gray-text);
+    font-size: .4rem;
 }
+
+section#page-items .item .title {
+    display: block;
+    margin: 5px 0 -5px;
+}
+
+section#page-items .item .added-date{
+    display: inline-block;
+}
+
+section#page-items .item .added-date::before {
+    content: "Dodano ";
+}
+
+section#page-items .item .added-date::after {
+    content: ", o godzinie ";
+}
+
 footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #212529;
-    margin-top: 20px;
+    background-color: var(--header-color);
+    margin-top: 5px;
     padding: 20px 15px;
-    color: #737B82;
-    font-size: .5rem;
+    color: var(--gray-text);
+    font: .4rem 'Lato', sens-serif;
 }
 
 footer span:first-child {
     margin-bottom: 15px;
+}
+
+@media (min-width: 425px) {
+    section#page-items .item .image {
+        width: 100%;
+        height: 250px;
+    }
+    section#page-items .item {
+        flex-basis: 445px;
+        padding: 10px 10px;
+        background-color: var(--header-color);
+        margin: 5px 0;
+    }
+}
+
+@media (min-width: 700px) {
+    section#page-items .item {
+        flex-basis: calc(50% - 10px);
+        margin: 5px 5px;
+    }
+}
+
+@media (min-width: 900px) {
+    section#page-items .item .image {
+        width: 100%;
+        height: 200px;
+    }
+    section#page-items .item {
+        flex-basis: calc(33% - 10px);
+    }
+}
+
+@media (min-width: 1024px) {
+    section#page-items .item {
+        flex-basis: calc(33% - 10px);
+    }
+
+    section#page-items {
+        margin: 70px auto 0;
+        max-width: 1200px;
+    }
+
+    section#page-items .item .image {
+        height: 230px;
+    }
+
+    #cat-dropdown {
+        display: none;
+    }
+
+    #add-ad-desktop{
+        display: block;
+    }
+
+    section#page-head #mobile-menu {
+        display: none;
+    }
+
+    section#page-head #desktop-menu {
+        display: block;
+    }
+
+    section#page-head nav#desktop-menu{
+        flex-grow: 1;
+        padding: 0 10px;
+        margin: 0 15px 0 5px;
+    }
+
+    section#page-head nav#desktop-menu ul {
+        margin: 0 auto;
+        max-width: 910px;
+    }
+    section#page-head nav#desktop-menu ul li{
+        cursor: pointer;
+    }
+    section#page-head nav#desktop-menu ul li i {
+        margin-right: 8px;
+    }
+
+    footer span:first-child{
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1260px){
+    section#page-head nav#desktop-menu{
+        margin: 0 0 0 183px;
+    }
 }
