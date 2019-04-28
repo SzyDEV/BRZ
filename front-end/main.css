@@ -35,6 +35,9 @@ html {
 body {
     background-color: var(--background-color);
     color: var(--accent-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 section#page-head{
@@ -45,6 +48,10 @@ section#page-head{
     border-bottom: 2px solid var(--accent-color);
     background-color: var(--header-color);
     border-radius: 0% 0% 5px 5px;
+}
+
+section#page-head h1 {
+    font-size: 1.2rem;
 }
 
 section#page-head header select {
@@ -155,11 +162,16 @@ div#add-ad i {
 }
 
 section#page-items {
+    flex-grow: 1;
     margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+section#page-items, section#form *{
     font: bold .7rem 'Lato', sans-serif;
+    color: var(--accent-color);
 }
 
 section#page-items .item {
@@ -196,6 +208,59 @@ section#page-items .item .added-date::before {
 
 section#page-items .item .added-date::after {
     content: ", o godzinie ";
+}
+
+section#form {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    background-color: var(--header-color);
+}
+
+section#form form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+section#form form label {
+    margin: 10px 0 3px;
+}
+
+section#form form input[type="submit"] {
+    margin: 21px 0 3px; 
+    transition: .3s;
+    cursor: pointer;
+}
+
+section#form form input[type="submit"]:hover {
+    color: var(--header-color);
+    background-color: var(--accent-color);
+}
+
+section#form form input, section#form form select, section#form form #addFile {
+    padding: 5px 8px;
+    background-color: transparent;
+    border: var(--logo-border);
+    border-width: 1px;  
+}
+
+section#form form input[type="file"] {
+    padding: 0;
+    border: none;
+}
+
+section#form form #file {
+    display: none;
+}
+
+section#form form #addFile{
+    cursor: pointer;
+    margin: 0;
 }
 
 footer {
